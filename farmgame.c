@@ -15,6 +15,7 @@ int shop_close = 0;
 char event[200];
 int error = 0;
 
+
 struct plant{
     char name[20];
     int buy, water, sale, regrowth , ea;
@@ -192,6 +193,9 @@ void event_generate(){
             lucky_plant = ((lucky_plant*multiplier) + increment) % 9;
         }
     }
+    else if (day >= 11){
+        printf("End game\n");
+    }
 }
 
 void home(){
@@ -220,6 +224,7 @@ void home(){
                 sleep(1);
             }
             day++;
+
             stamina = 16;
             for (int i = 1;i <= 9;i++){
                 f[i].water_yet = 0;
@@ -235,6 +240,7 @@ void home(){
         else if (istype("n") || istype("no")){
             printf("\nI think i'm fine.\n");
             sleep(1);
+            system("cls");
             return;
         }
         else {
@@ -684,6 +690,15 @@ int main(){
         f[i].water_yet = 0;
         f[i].insect = 0;
     }
+    //set best money
+    FILE * fp;
+    int best;
+    fp = fopen("best_money.txt", "r");
+    if (fp == NULL){
+        loading("Error to open best_money.txt", 5);
+    }
+    fscanf(fp ,"You best money =  %d", &best);
+    fclose(fp);
 
     start:
     system("cls");
@@ -701,7 +716,7 @@ int main(){
         printf("++ each day you have 16 stamina, to do some action will reduce your stamina ++\n");
         printf("++ the goal of the game is to save as much money as you can ++\n");
         printf("++ when you play a game, you must type a word or a number to activate the action written on the line ++\n");
-        while (1){
+        while (1 && day <= 10){
             printf("******************************************************\n");
             printf("                        DAY %02d                        \n", day);
             printf("	       stamina:%02d money:%d                \n", stamina, money);
@@ -745,6 +760,12 @@ int main(){
     else{
         goto start;
     }
+    if (money >= best){
+        best = money;
+        fp = fopen("best_money.txt", "w");
+        fprintf(fp ,"You best money = %d", best);
+        fclose(fp);
+    }
     printf("******************************************************\n");
     printf("                   thx for playing                    \n");
     printf("******************************************************\n");
@@ -752,6 +773,7 @@ int main(){
     printf("******************************************************\n");
     printf("                     - END GAME -\n");
     printf("your money = %d\n", money);
+    printf("your best = %d\n", best);
     printf("                   thx for playing\n");
     printf("******************************************************\n");
     scanf(" %c", type);
