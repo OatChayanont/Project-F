@@ -12,7 +12,7 @@ int dc = 0; //discount
 int oc = 0; //overcharge
 int bad_product = 0;
 int shop_close = 0;
-char event[200];
+char event[200] = "-";
 int error = 0;
 
 
@@ -32,7 +32,7 @@ struct item{
     int buy, ea;
 }item[10]; 
 
-char item_name[3][20] = {"insecticide", "fertilizer", "stimulus"};
+char item_name[3][20] = {"insecticide", "fertilizer", "energy"};
 int item_buy[3] = {20, 50, 100};
 
 struct farm{
@@ -253,7 +253,7 @@ void shop(){
     while(1){
         system("cls");
         printf("                        DAY %02d\n", day);
-        printf("	       stamina:%02d money:%d                \n", stamina, money);
+        printf("	       Stamina:%02d Money:%d                \n", stamina, money);
         printf("======================================================\n");
         printf("                       + SHOP +                       \n");
         printf("______________________________________________________\n");
@@ -270,13 +270,13 @@ void shop(){
         printf("______________________________________________________\n");
         printf("| 10. insecticide (get rid of insects)       | %5d |\n", item[10].buy);
         printf("| 11. fertilizer (water for plant -1)        | %5d |\n", item[11].buy);
-        printf("| 12. stimulus (stamina +2)                  | %5d |\n", item[12].buy);
+        printf("| 12. enerygy drink (stamina +2)             | %5d |\n", item[12].buy);
         printf("\n");
         printf("===================================== [x] to exit ====\n");
         printf("event: %s\n", event);
         printf("======================================================\n");
         printf("\n");
-        printf("++ type a number before order to buy seed or item that you want ++\n");
+        printf("++ Type a number before order to buy seed or item that you want ++\n");
         printf("++ water refers to the number of days it takes to water a plant to grow ++\n");
         printf("++ sale price refers to the sale price of productivity as a plant matures ++\n");
         printf("\n");
@@ -303,7 +303,7 @@ void shop(){
                     money -= price;
                     p[id].ea++;
                     printf("    money - %d\n", price);
-                    printf("    You by %s seed. Now you have %s seed %d ea.\n", p[id].name, p[id].name, p[id].ea);
+                    printf("    You buy %s seed. Now you have %s seed %d ea.\n", p[id].name, p[id].name, p[id].ea);
                 }
                 else printf("   You don't have enough money\n");
             }
@@ -318,7 +318,7 @@ void shop(){
                     money -= price;
                     item[id].ea++;
                     printf("    money - %d\n", price);
-                    printf("    You by %s seed. Now you have %s seed %d ea.\n", item[id].name, item[id].name, item[id].ea);
+                    printf("    You buy %s seed. Now you have %s seed %d ea.\n", item[id].name, item[id].name, item[id].ea);
                 }
                 else printf("   You don't have enough money\n");
             }
@@ -326,7 +326,7 @@ void shop(){
         else{
             printf("    Error\n");
         }
-        loading("wait a minute .", 2);
+        loading("Wait a minute .", 2);
     }
 }
 
@@ -334,7 +334,7 @@ void farm(){
     while (1){
         start:
         printf("                        DAY %02d\n", day);
-        printf("	       stamina:%d money:%d                \n", stamina, money);
+        printf("	       Stamina:%d Money:%d                \n", stamina, money);
         printf("======================================================\n");
         for (int i = 0; i <= 2; i++){
             printf("\n");
@@ -374,19 +374,19 @@ void farm(){
         }
         printf("\n");
         printf("======================================================\n");
-        printf("event: %s\n", event);
+        printf("Event: %s\n", event);
         printf("======================================================\n");
         printf("\n");
         printf(" type [P] to plant (-1 stamina per once)\n");
         printf(" type [W] to water (-1 stamina per once)\n");
         printf(" type [R] to remove plant (-1 stamina per once)\n");
-        printf(" type [C] to harvest the plant that blooms and sell it automatically (-1 stamina per once)\n");
+        printf(" type [C] to harvest the plant that already bloomed and sell it automatically (-1 stamina per once)\n");
         printf(" type [I] to use insecticides(%d EA) (-1 stamina per once)\n", item[10].ea);
         printf(" type [T] to use stimulus(%d EA) (+2 stamina)\n", item[12].ea);
         printf(" type [X] to exit\n");
         printf("\n");
-        printf("++ type a word in squre blacket to do what is written on the line. \n");
-        printf("++ You can water each farm once a day ++\n");
+        printf("++ Type the word in [ ] to do what is written on the line. \n");
+        printf("++ You can water the plot once per day or you will waste stamina. ++\n");
         printf("\n");
         printf("-> ");
         scanf(" %[^\n]", type);
@@ -397,7 +397,7 @@ void farm(){
                 system("cls");
                 continue;
             }
-            printf("Enter farm number to plant (Enter X to cancel)\n");
+            printf("Enter the number of plots that you want to plant (Enter X to cancel)\n");
             scanf(" %[^\n]", type);
             if (istype("x") || istype("cancel")){
                 system("cls");
@@ -411,7 +411,7 @@ void farm(){
             }
             if (1 <= num && num <= 9 && f[num].use == 0){
                 printf("******************************************************\n");
-                printf("	   what seed do you want to plant?\n");
+                printf("	   What type of seed do you want to plant?\n");
                 for (int i = 1; i <= 9; i++){
                     printf(" [%d]%-12s (You have %-11s seed %2d ea.)\n", i, p[i].name, p[i].name, p[i].ea);
                 }
@@ -474,7 +474,7 @@ void farm(){
                 system("cls");
                 continue;
             }
-            printf("Enter farm number to water (Enter X to cancel)\n");
+            printf("Enter the number of plots that you want to water (Enter X to cancel)\n");
             scanf(" %[^\n]", type);
             if (istype("x") || istype("cancel")){
                 system("cls");
@@ -512,7 +512,7 @@ void farm(){
                 system("cls");
                 continue;
             }
-            printf("Enter farm number to remove plant (Enter X to cancel)\n");
+            printf("Enter the number of plots that you want to remove plant (Enter X to cancel)\n");
             scanf(" %[^\n]", type);
             if (istype("x") || istype("cancel")){
                 system("cls");
@@ -532,7 +532,7 @@ void farm(){
                 loading("Remove", 2);
             }
             else if (f[num].use == 0){
-                printf("Don't have plant to remove in this farm\n");
+                printf("You don't have any plants to remove on this farm\n");
                 loading("Loading", 2);
             }
             else {
@@ -548,7 +548,7 @@ void farm(){
                 system("cls");
                 continue;
             }
-            printf("Enter farm number to harvest (Enter X to cancel)\n");
+            printf("Enter the number of plots that you want to harvest (Enter X to cancel)\n");
             scanf(" %[^\n]", type);
             if (istype("x") || istype("cancel")){
                 system("cls");
@@ -583,12 +583,12 @@ void farm(){
                     loading("Loading", 2);
                 }
                 else {
-                    printf("This plant not bloom\n");
+                    printf("This plant is not bloom.\n");
                     loading("Loading", 2);
                 }
             }
             else if (f[num].use == 0){
-                printf("This farm don't have plant.\n");
+                printf("This plot doesn't' have plants.\n");
                 loading("Loading", 2);
             }
             else {
@@ -604,11 +604,11 @@ void farm(){
                 continue;
             }
             if(item[10].ea <= 0){
-                loading("You don't have insecticides", 2);
+                loading("You don't have insecticides.", 2);
                 system("cls");
                 continue;
             }
-            printf("Enter farm number to use insecticides (Enter X to cancel)\n");
+            printf("Enter the number of plots that you want to use insecticides (Enter X to cancel)\n");
             scanf(" %[^\n]", type);
             if (istype("x") || istype("cancel")){
                 system("cls");
@@ -632,7 +632,7 @@ void farm(){
                 loading("Use insecticides", 2);
             }
             else if (f[num].use == 0){
-                printf("Don't have plant to use insecticides in this farm\n");
+                printf("You don't have any plants to use insecticides on this farm.\n");
                 loading("Loading", 2);
             }
             else {
@@ -641,14 +641,14 @@ void farm(){
                 system("cls");
             }
         }
-        else if(istype("t") || istype("stimulus")){
+        else if(istype("t") || istype("energy")){
             if(item[12].ea <= 0){
-                loading("You don't have stimulus", 2);
+                loading("You don't have energy drink.", 1);
                 system("cls");
                 continue;
             }
             else{
-                loading("Use stimulus", 2);
+                loading("Use energy drink.", 1);
                 stamina += 2;
                 system("cls");
                 continue;
@@ -666,7 +666,7 @@ void farm(){
 }
 
 int main(){
-    SetConsoleTitle("FARM");
+    SetConsoleTitle("Zawarudo Farm");
     //set plant
     for (int i = 1; i <= 9; i++){
         strcpy(p[i].name, plant_name[i-1]);
@@ -703,23 +703,23 @@ int main(){
     start:
     system("cls");
     printf("======================================================\n");
-    printf("            THIS IS ' FARM' GAME                      \n");
+    printf("            THIS IS 'ZAWARUDO FARM' GAME                      \n");
     printf("======================================================\n");
     printf("                     type [start]                     \n");
     printf("\n-> ");
     scanf(" %[^\n]", type);
     if (istype("start")){
         system("cls");
-        printf("story : One day. There are YouTubers who make content for farmers to race to grow crops to sell,\n");
-        printf("to compete against who earns the most money, and you are one of the contestants.\n");
-        printf("++ you will start the game with 800 coin ++\n");
-        printf("++ each day you have 16 stamina, to do some action will reduce your stamina ++\n");
-        printf("++ the goal of the game is to save as much money as you can ++\n");
-        printf("++ when you play a game, you must type a word or a number to activate the action written on the line ++\n");
+        printf("Story : A YouTuber created an event where farmers compete to grow crops and sell them to see who can earn the most money.\n");
+        printf("and you have participated in this activity.\n");
+        printf("++ You will start the game with 800 coins. ++\n");
+        printf("++ Each day you have 16 stamina, some actions will decrease your stamina. ++\n");
+        printf("++ The goal of the game is to have as much money as you can. ++\n");
+        printf("++ How to play a game, you must type a word or a number to select the action that is written on the line. ++\n");
         while (1 && day <= 10){
             printf("******************************************************\n");
             printf("                        DAY %02d                        \n", day);
-            printf("	       stamina:%02d money:%d                \n", stamina, money);
+            printf("	       Stamina:%02d Money:%d                \n", stamina, money);
             printf("*****************************************************\n");
             printf(" type [H] to go to home (sleep for skip the day)\n");
             printf(" type [S] to go to shop\n");
@@ -727,7 +727,7 @@ int main(){
             printf(" type [X] to exit this game\n");
             printf("\n");
             printf("******************************************************\n");
-            printf("event: %s\n", event);
+            printf("Event: %s\n", event);
             printf("******************************************************\n");
             if (error){
                 printf("ERROR\n");
@@ -767,14 +767,14 @@ int main(){
         fclose(fp);
     }
     printf("******************************************************\n");
-    printf("                   thx for playing                    \n");
+    printf("                   Thanks for playing.                \n");
     printf("******************************************************\n");
     sleep(3);
     printf("******************************************************\n");
     printf("                     - END GAME -\n");
     printf("your money = %d\n", money);
     printf("your best = %d\n", best);
-    printf("                   thx for playing\n");
+    printf("                   Thanks for playing\n");
     printf("******************************************************\n");
     scanf(" %c", type);
     return 0;
