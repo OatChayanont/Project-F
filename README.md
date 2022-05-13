@@ -15,8 +15,8 @@
 > → https://drive.google.com/file/d/1YkxbdOy9CcmsRqoKgywj4UD2eAHvzqTn/view
 # Member
 -----------------------------------------------------------------------
-♚ 64070005 | Kanlayakorn Yeenang  | Video
-♛ 64070017 | Chayanont Supakit    | Website
-♜ 64070076 | Peravit Kritchakaj   | Poster
-♝ 64070081 | Pairat Chuenchom     | Coding
+> ♚ 64070005 | Kanlayakorn Yeenang  | Video
+> ♛ 64070017 | Chayanont Supakit    | Website
+> ♜ 64070076 | Peravit Kritchakaj   | Poster
+> ♝ 64070081 | Pairat Chuenchom     | Coding
 -----------------------------------------------------------------------
