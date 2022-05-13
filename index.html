@@ -36,10 +36,11 @@ body, html {
     <a href="#home" class="w3-bar-item w3-button w3-wide">LOGO</a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
-      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
-      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
-      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
-      <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> PRICING</a>
+      <a href="#home" class="w3-bar-item w3-button"><i class="fa fa-star"></i> HOME</a>
+      <a href="#objective" class="w3-bar-item w3-button"><i class="fa fa-user"></i> OBJECTIVE</a>
+      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> SCREENSHOT</a>
+      <a href="#video" class="w3-bar-item w3-button"><i class="fa fa-youtube"></i> VIDEO</a>
+      <a href="#poster" class="w3-bar-item w3-button"><i class="fa fa-circle"></i> POSTER</a>
       <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> TEAM</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
@@ -49,16 +50,6 @@ body, html {
     </a>
   </div>
 </div>
-
-<!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
-  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
-  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
-  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
-  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">team</a>
-</nav>
 
 <!-- Header with full-height image -->
 <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
@@ -80,7 +71,7 @@ body, html {
 </header>
 
 <!-- About Section -->
-<div class="w3-container" style="padding:128px 16px" id="about">
+<div class="w3-container" style="padding:128px 16px" id="objective">
   <h1 class="w3-center">OBJECTIVE</h1>
   <div class="w3-row-padding w3-center" style="margin-top:64px">
     <div class="w3-quarter">
@@ -121,27 +112,6 @@ body, html {
 </div>
 
 
-
-<!-- Promo Section "Statistics"
-<div class="w3-container w3-row w3-center w3-dark-grey w3-padding-64">
-  <div class="w3-quarter">
-    <span class="w3-xxlarge">14+</span>
-    <br>Partners
-  </div>
-  <div class="w3-quarter">
-    <span class="w3-xxlarge">55+</span>
-    <br>Projects Done
-  </div>
-  <div class="w3-quarter">
-    <span class="w3-xxlarge">89+</span>
-    <br>Happy Clients
-  </div>
-  <div class="w3-quarter">
-    <span class="w3-xxlarge">150+</span>
-    <br>Meetings
-  </div>
-</div> -->
-
 <!-- Work Section -->
 <div class="w3-container" style="padding:128px 16px" id="work">
   <h3 class="w3-center">SCREENSHOT</h3>
@@ -164,16 +134,16 @@ body, html {
 
   <div class="w3-row-padding w3-section">
     <div class="w3-col l3 m6">
-      <img src="https://cdn.discordapp.com/attachments/967410988372590632/974627874378231808/unknown.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tablet">
+      <img src="https://cdn.discordapp.com/attachments/967410988372590632/974627874378231808/unknown.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Event 1">
     </div>
     <div class="w3-col l3 m6">
-      <img src="https://media.discordapp.net/attachments/804315648946733116/965110170088787968/unknown.png?width=1201&height=675" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A camera">
+      <img src="https://cdn.discordapp.com/attachments/967410988372590632/974709065190088824/unknown.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Event 2">
     </div>
     <div class="w3-col l3 m6">
-      <img src="https://media.discordapp.net/attachments/804315648946733116/965110170088787968/unknown.png?width=1201&height=675" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A typewriter">
+      <img src="https://cdn.discordapp.com/attachments/967410988372590632/974709175676440656/unknown.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Event 3">
     </div>
     <div class="w3-col l3 m6">
-      <img src="https://media.discordapp.net/attachments/804315648946733116/965110170088787968/unknown.png?width=1201&height=675" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tableturner">
+      <img src="https://cdn.discordapp.com/attachments/967410988372590632/974709334036602880/unknown.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Event 4">
     </div>
   </div>
 </div>
@@ -195,15 +165,15 @@ body, html {
       <p>เสมือนคุณได้ทำฟาร์มจำลองในเกมนี้ ซึ่งจำเป็นต้องใช้การวางแผนนิดหน่อย</p>
     </div>
     <div class="w3-col m6">
-      <p class="w3-wide"><i class="fa fa-camera w3-margin-right"></i>การวางแผน</p>
+      <p class="w3-wide"><i class="fa fa-check-square w3-margin-right"></i>การวางแผน</p>
       <div class="w3-grey">
         <div class="w3-container w3-dark-grey w3-center" style="width:80%">80%</div>
       </div>
-      <p class="w3-wide"><i class="fa fa-desktop w3-margin-right">การแก้ปัญหา</i></p>
+      <p class="w3-wide"><i class="fa fa-spinner w3-margin-right">การแก้ปัญหา</i></p>
       <div class="w3-grey">
         <div class="w3-container w3-dark-grey w3-center" style="width:50%">50%</div>
       </div>
-      <p class="w3-wide"><i class="fa fa-photo w3-margin-right"></i>ความสนุก</p>
+      <p class="w3-wide"><i class="fa fa-bars w3-margin-right"></i>ความสนุก</p>
       <div class="w3-grey">
         <div class="w3-container w3-dark-grey w3-center" style="width:100%">100%</div>
       </div>
@@ -211,70 +181,15 @@ body, html {
   </div>
 </div>
 
-<!-- Pricing Section -->
-<!-- <div class="w3-container w3-center w3-dark-grey" style="padding:128px 16px" id="pricing">
-  <h3>PRICING</h3>
-  <p class="w3-large">Choose a pricing plan that fits your needs.</p>
-  <div class="w3-row-padding" style="margin-top:64px">
-    <div class="w3-third w3-section">
-      <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-black w3-xlarge w3-padding-32">Basic</li>
-        <li class="w3-padding-16"><b>10GB</b> Storage</li>
-        <li class="w3-padding-16"><b>10</b> Emails</li>
-        <li class="w3-padding-16"><b>10</b> Domains</li>
-        <li class="w3-padding-16"><b>Endless</b> Support</li>
-        <li class="w3-padding-16">
-          <h2 class="w3-wide">$ 10</h2>
-          <span class="w3-opacity">per month</span>
-        </li>
-        <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-black w3-padding-large">Sign Up</button>
-        </li>
-      </ul>
-    </div>
-    <div class="w3-third">
-      <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-red w3-xlarge w3-padding-48">Pro</li>
-        <li class="w3-padding-16"><b>25GB</b> Storage</li>
-        <li class="w3-padding-16"><b>25</b> Emails</li>
-        <li class="w3-padding-16"><b>25</b> Domains</li>
-        <li class="w3-padding-16"><b>Endless</b> Support</li>
-        <li class="w3-padding-16">
-          <h2 class="w3-wide">$ 25</h2>
-          <span class="w3-opacity">per month</span>
-        </li>
-        <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-black w3-padding-large">Sign Up</button>
-        </li>
-      </ul>
-    </div>
-    <div class="w3-third w3-section">
-      <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-black w3-xlarge w3-padding-32">Premium</li>
-        <li class="w3-padding-16"><b>50GB</b> Storage</li>
-        <li class="w3-padding-16"><b>50</b> Emails</li>
-        <li class="w3-padding-16"><b>50</b> Domains</li>
-        <li class="w3-padding-16"><b>Endless</b> Support</li>
-        <li class="w3-padding-16">
-          <h2 class="w3-wide">$ 50</h2>
-          <span class="w3-opacity">per month</span>
-        </li>
-        <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-black w3-padding-large">Sign Up</button>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div> -->
 
-<div class="w3-grey w3-center" style="padding-top:100px; padding-bottom:200px;">
+<div class="w3-grey w3-center" style="padding-top:100px; padding-bottom:200px;" id="video">
   <h1 style="margin-top:0px; padding-bottom:50px; color:aliceblue">Video</h1>
   <iframe width="800" height="480" src="https://www.youtube.com/embed/xvEQplGjJy8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 
 <!-- Contact Section -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
+<div class="w3-container w3-light-grey" style="padding:128px 16px" id="poster">
   <h1 class="w3-center">Poster</h1>
   <p class="w3-center w3-large">ฅ (^ v ^)ฅ</p>
   <div style="margin-top:48px">
@@ -345,12 +260,7 @@ body, html {
 <footer class="w3-center w3-black w3-padding-64">
   <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
   <div class="w3-xlarge w3-section">
-    <!-- <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i> -->
     <a href="https://www.github.com/OatChayanont/Project-F" target="_blank"><i class="fa fa-github w3-hover-opacity"></i></a>
-    <!-- <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i> --> 
   </div>
   <p>Powered by <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" title="W3.CSS" target="_blank" class="w3-hover-text-green">แก๊ง Rocket</a></p>
 </footer>
