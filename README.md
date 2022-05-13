@@ -18,5 +18,5 @@
 > * ♚ 64070005 | Kanlayakorn Yeenang  | Video
 > * ♛ 64070017 | Chayanont Supakit    | Website
 > * ♜ 64070076 | Peravit Kritchakaj   | Poster
-> * ♝ 64070081 | Pairat Chuenchom     | Coding
+> * ♞ 64070081 | Pairat Chuenchom     | Coding
 -----------------------------------------------------------------------
